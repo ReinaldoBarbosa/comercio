@@ -37,11 +37,17 @@ public class LojaController {
 		produto2.setPreco(2467.99);
 		produto2.setCodigoDeBarras("HFDUEWVFIWEFV4389");
 		
-		listaDeProdutos.add(produto1);
+		listaDeProdutos.add(produto);
 		listaDeProdutos.add(produto2);
 		
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		return"produtos";
+	}
+	
+	@GetMapping("/novo-produto")
+	public String novoProduto() {
+
+		return "novo-prod";
 	}
 }
 
