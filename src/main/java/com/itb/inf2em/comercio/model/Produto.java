@@ -6,6 +6,7 @@ public class Produto {
 	private String descricao;
 	private String codigoBarras;
 	private double preco;
+	private boolean status;
 	
 	
 	//public: acesso liberdo para todas as classes 
@@ -47,12 +48,7 @@ public class Produto {
 	
 	//Codigo de Barras
 	
-	public void setCodigoDeBarras(String codigoBarras) {
-		this.codigoBarras = codigoBarras;
-	}
-	public String getCodigoDeBarras () {
-		return codigoBarras;
-	}
+	
 	
 	//Preço
 	
@@ -60,7 +56,25 @@ public class Produto {
 		this.preco = preco;
 	}
 	
+	public String getCodigoBarras() {
+		return codigoBarras;
+	}
+
+	public void setCodigoBarras(String codigoBarras) {
+		this.codigoBarras = codigoBarras;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
 	public double getPreco () {
 		return preco; 
 	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	
+	
 }
