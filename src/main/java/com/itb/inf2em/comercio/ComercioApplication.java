@@ -9,7 +9,7 @@ public class ComercioApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ComercioApplication.class, args);
 		
-		System.out.println("Hello Word! Reinaldo Barbosa");
+		System.out.println("Hello Word! ");
 	}
 
 }
