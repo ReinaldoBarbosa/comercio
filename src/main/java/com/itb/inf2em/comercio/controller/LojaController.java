@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.thymeleaf.model.IModel;
 
@@ -20,6 +21,7 @@ public class LojaController {
 	@GetMapping("/listar")
 	public String litarProduto(Model model){
 		
+		/*
 		Produto produto;
 		
 		produto = new Produto();
@@ -41,15 +43,27 @@ public class LojaController {
 		
 		listaDeProdutos.add(produto);
 		listaDeProdutos.add(produto2);
+		*/
 		
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		return"produtos";
 	}
 	
 	@GetMapping("/novo-produto")
-	public String novoProduto() {
+	public String novoProduto(Produto produto, Model model) {
 
+		model.addAttribute("produto", produto);
+		
 		return "novo-produto";
 	}
+	
+	@PostMapping("/add-prod")
+	public String gravarNovoProd(Produto produto) {
+		
+		listaDeProdutos.add(produto);
+		
+		return "redirect:/comercio/produto/listar";
+	}
 }
+
 
